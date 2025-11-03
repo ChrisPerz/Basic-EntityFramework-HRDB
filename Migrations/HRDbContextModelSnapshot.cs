@@ -70,6 +70,7 @@ namespace EFCoreModelApp.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("HireDate")
@@ -77,6 +78,7 @@ namespace EFCoreModelApp.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.HasKey("EmployeeId");
@@ -90,22 +92,29 @@ namespace EFCoreModelApp.Migrations
                         {
                             EmployeeId = 1,
                             DepartmentID = 1,
-                            FirstName = "Alicia",
-                            LastName = "Wood"
+                            FirstName = "Jorge",
+                            LastName = "Colewall"
                         },
                         new
                         {
                             EmployeeId = 2,
                             DepartmentID = 2,
-                            FirstName = "Brian",
-                            LastName = "Johnson"
+                            FirstName = "Anna",
+                            LastName = "Smith"
                         },
                         new
                         {
                             EmployeeId = 3,
+                            DepartmentID = 2,
+                            FirstName = "Peter",
+                            LastName = "Brown"
+                        },
+                        new
+                        {
+                            EmployeeId = 4,
                             DepartmentID = 3,
-                            FirstName = "Catherine",
-                            LastName = "Smith"
+                            FirstName = "Liam",
+                            LastName = "Johnson"
                         });
                 });
 

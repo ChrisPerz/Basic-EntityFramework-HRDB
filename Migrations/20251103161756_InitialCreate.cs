@@ -33,8 +33,8 @@ namespace EFCoreModelApp.Migrations
                 {
                     EmployeeId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: true),
                     HireDate = table.Column<DateTime>(type: "TEXT", nullable: true),
                     DepartmentID = table.Column<int>(type: "INTEGER", nullable: false)
@@ -65,9 +65,10 @@ namespace EFCoreModelApp.Migrations
                 columns: new[] { "EmployeeId", "DepartmentID", "Email", "FirstName", "HireDate", "LastName" },
                 values: new object[,]
                 {
-                    { 1, 1, null, "Alicia", null, "Wood" },
-                    { 2, 2, null, "Brian", null, "Johnson" },
-                    { 3, 3, null, "Catherine", null, "Smith" }
+                    { 1, 1, null, "Jorge", null, "Colewall" },
+                    { 2, 2, null, "Anna", null, "Smith" },
+                    { 3, 2, null, "Peter", null, "Brown" },
+                    { 4, 3, null, "Liam", null, "Johnson" }
                 });
 
             migrationBuilder.CreateIndex(
