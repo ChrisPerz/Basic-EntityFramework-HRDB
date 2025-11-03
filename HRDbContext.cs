@@ -21,10 +21,15 @@ namespace EFCoreModelApp
             .HasForeignKey(e=> e.DepartmentID);
 
             //OR
-            // modelBuilder.Entity<Employee>()
-            // .HasOne(e=> e.Department)
-            // .WithMany(d=> d.Employees)
-            // .HasForeignKey(e=> e.DepartmentID);
+            // modelBuilder.Entity<Employee>(entity =>
+            // {
+            //     entity.Property(e => e.FirstName).IsRequired().HasMaxLength(50);
+            //     entity.Property(e => e.LastName).IsRequired().HasMaxLength(50);
+            //     entity
+            //         .HasOne(e => e.Department)
+            //         .WithMany(d => d.Employees)
+            //         .HasForeignKey(e => e.DepartmentID);
+            // });
 
             modelBuilder.Entity<Department>().HasData(
                 new Department { DepartmentId = 1, DepartmentName = "Human Resources", Location = "New York" },
